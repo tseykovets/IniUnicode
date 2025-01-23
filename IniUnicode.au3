@@ -12,6 +12,7 @@
 ; Description ...: Unicode-enabled user defined functions (UDF) for working with standard format .ini files.
 ; Author(s) .....: Nikita Tseykovets
 ; Modifiers .....: 
+; Link ..........: https://github.com/tseykovets/IniUnicode
 ; Dll ...........: 
 ; ===============================================================================================================================
 
