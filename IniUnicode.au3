@@ -50,7 +50,7 @@
 ; Related .......: _IniUnicode_Read, _IniUnicode_ReadSection, _IniUnicode_ReadSectionNames, _IniUnicode_RenameSection,
 ;                  _IniUnicode_Write, _IniUnicode_WriteSection
 ; Link ..........: 
-; Example .......: no
+; Example .......: Yes
 ; ===============================================================================================================================
 Func _IniUnicode_Delete($sFile, $sSectionUnicode, $sKeyUnicode = Default)
 	Local $sSectionAnsi = __IniUnicode_UnicodeToAnsi($sSectionUnicode)
@@ -83,7 +83,7 @@ EndFunc
 ; Related .......: _IniUnicode_Delete, _IniUnicode_ReadSection, _IniUnicode_ReadSectionNames, _IniUnicode_RenameSection,
 ;                  _IniUnicode_Write, _IniUnicode_WriteSection
 ; Link ..........: 
-; Example .......: no
+; Example .......: Yes
 ; ===============================================================================================================================
 Func _IniUnicode_Read($sFile, $sSectionUnicode, $sKeyUnicode, $sDefaultUnicode)
 	Local $sSectionAnsi = __IniUnicode_UnicodeToAnsi($sSectionUnicode)
@@ -114,7 +114,7 @@ EndFunc
 ; Related .......: _IniUnicode_Delete, _IniUnicode_Read, _IniUnicode_ReadSectionNames, _IniUnicode_RenameSection,
 ;                  _IniUnicode_Write, _IniUnicode_WriteSection
 ; Link ..........: 
-; Example .......: no
+; Example .......: Yes
 ; ===============================================================================================================================
 Func _IniUnicode_ReadSection($sFile, $sSectionUnicode)
 	Local $sSectionAnsi = __IniUnicode_UnicodeToAnsi($sSectionUnicode)
@@ -144,7 +144,7 @@ EndFunc
 ; Related .......: _IniUnicode_Delete, _IniUnicode_Read, _IniUnicode_ReadSection, _IniUnicode_RenameSection,
 ;                  _IniUnicode_Write, _IniUnicode_WriteSection
 ; Link ..........: 
-; Example .......: no
+; Example .......: Yes
 ; ===============================================================================================================================
 Func _IniUnicode_ReadSectionNames($sFile)
 	Local $vSectionNames = IniReadSectionNames($sFile)
@@ -179,7 +179,7 @@ EndFunc
 ; Related .......: _IniUnicode_Delete, _IniUnicode_Read, _IniUnicode_ReadSection, _IniUnicode_ReadSectionNames,
 ;                  _IniUnicode_Write, _IniUnicode_WriteSection
 ; Link ..........: 
-; Example .......: no
+; Example .......: Yes
 ; ===============================================================================================================================
 Func _IniUnicode_RenameSection($sFile, $sSectionUnicode, $sNewSectionUnicode, $iFlag = Default)
 	Local $sSectionAnsi = __IniUnicode_UnicodeToAnsi($sSectionUnicode)
@@ -209,7 +209,7 @@ EndFunc
 ; Related .......: _IniUnicode_Delete, _IniUnicode_Read, _IniUnicode_ReadSection, _IniUnicode_ReadSectionNames,
 ;                  _IniUnicode_RenameSection, _IniUnicode_WriteSection
 ; Link ..........: 
-; Example .......: no
+; Example .......: Yes
 ; ===============================================================================================================================
 Func _IniUnicode_Write($sFile, $sSectionUnicode, $sKeyUnicode, $sValueUnicode)
 	Local $sSectionAnsi = __IniUnicode_UnicodeToAnsi($sSectionUnicode)
@@ -243,7 +243,7 @@ EndFunc
 ; Related .......: _IniUnicode_Delete, _IniUnicode_Read, _IniUnicode_ReadSection, _IniUnicode_ReadSectionNames,
 ;                  _IniUnicode_RenameSection, _IniUnicode_Write
 ; Link ..........: 
-; Example .......: no
+; Example .......: Yes
 ; ===============================================================================================================================
 Func _IniUnicode_WriteSection($sFile, $sSectionUnicode, $vData, $iIndex = Default)
 	If $iIndex = Default Then $iIndex = 1
@@ -277,7 +277,7 @@ EndFunc
 ; Remarks .......: Requires an included StringConstants.au3.
 ; Related .......: __IniUnicode_UnicodeToAnsi
 ; Link ..........: 
-; Example .......: no
+; Example .......: No
 ; ===============================================================================================================================
 Func __IniUnicode_AnsiToUnicode($sString)
 	Return BinaryToString(StringToBinary($sString, $SB_ANSI), $SB_UTF8)
@@ -294,7 +294,7 @@ EndFunc
 ; Remarks .......: Requires an included StringConstants.au3.
 ; Related .......: __IniUnicode_AnsiToUnicode
 ; Link ..........: 
-; Example .......: no
+; Example .......: No
 ; ===============================================================================================================================
 Func __IniUnicode_UnicodeToAnsi($sString)
 	Return BinaryToString(StringToBinary($sString, $SB_UTF8), $SB_ANSI)

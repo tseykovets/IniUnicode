@@ -48,6 +48,8 @@ or
 
 and use a familiar set of functions with recognizable names.
 
+The 'examples' folder contains examples of using all public functions of the library.
+
 ## Correspondence between standard functions and library functions
 
 The set of IniUnicode library functions replicates the set of standard AutoIt functions for working with .ini files. Their behavior is completely equivalent except for the addition Unicode enabling.
