@@ -1,2 +1,3 @@
+*.exe
+/tests/*.ini
 /tests/*.log
-/tests/functional.ini
