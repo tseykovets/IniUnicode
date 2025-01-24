@@ -281,7 +281,11 @@ EndFunc
 ; Example .......: No
 ; ===============================================================================================================================
 Func __IniUnicode_AnsiToUnicode($sString)
-	Return BinaryToString(StringToBinary($sString, $SB_ANSI), $SB_UTF8)
+	If StringIsASCII($sString) Then
+		Return $sString
+	Else
+		Return BinaryToString(StringToBinary($sString, $SB_ANSI), $SB_UTF8)
+	EndIf
 EndFunc
 
 ; #INTERNAL_USE_ONLY# ===========================================================================================================
@@ -298,5 +302,9 @@ EndFunc
 ; Example .......: No
 ; ===============================================================================================================================
 Func __IniUnicode_UnicodeToAnsi($sString)
-	Return BinaryToString(StringToBinary($sString, $SB_UTF8), $SB_ANSI)
+	If StringIsASCII($sString) Then
+		Return $sString
+	Else
+		Return BinaryToString(StringToBinary($sString, $SB_UTF8), $SB_ANSI)
+	EndIf
 EndFunc
