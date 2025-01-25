@@ -113,7 +113,7 @@ EndFunc
 ;                  _IniUnicode_ReadSection() function are always slower and create more CPU load than the standard
 ;                  IniReadSection() for working with standard format .ini files. This is true even for working with strings
 ;                  consisting only of ASCII characters.
-;                  The standard IniReadSection() function reads only the first 32767 characters of a section content for legacy
+;                  The standard IniReadSection() function reads only the first 32767 bytes of a section content for legacy
 ;                  reasons. This limit also applies to the library's _IniUnicode_ReadSection() function. But keep in mind that
 ;                  non-ASCII characters in UTF-8 encoding take up from 2 to 4 bytes, so the maximum allowed size of the section
 ;                  contents with non-ASCII characters in UTF-8 will accommodate fewer characters than with ASCII characters

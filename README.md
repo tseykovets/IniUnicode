@@ -31,7 +31,7 @@ Also, please note the following features:
 
 * The library's write functions create UTF-8 files without BOM. But they can also work with UTF-8 files with BOM. However, if the file is saved in UTF-8 with BOM, you should ensure that there is a newline character before the first section, otherwise it will not be read due to the 3 BOM bytes before the left square bracket.
 * Due to the conversion of string data to binary and back, as well as additional checks, the library functions are always slower and create more CPU load than the standard AutoIt functions for working with standard format .ini files. This is true even for reading and writing strings consisting only of ASCII characters.
-* The standard IniReadSection() function reads only the first 32767 characters of a section content for legacy reasons. This limit also applies to the library's _IniUnicode_ReadSection() function. But keep in mind that non-ASCII characters in UTF-8 encoding take up from 2 to 4 bytes, so the maximum allowed size of the section contents with non-ASCII characters in UTF-8 will accommodate fewer characters than with ASCII characters in UTF-8 or standard ANSI text.
+* The standard IniReadSection() function reads only the first 32767 bytes of a section content for legacy reasons. This limit also applies to the library's _IniUnicode_ReadSection() function. But keep in mind that non-ASCII characters in UTF-8 encoding take up from 2 to 4 bytes, so the maximum allowed size of the section contents with non-ASCII characters in UTF-8 will accommodate fewer characters than with ASCII characters in UTF-8 or standard ANSI text.
 
 ## Usage
 
