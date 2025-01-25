@@ -1,3 +1,4 @@
+; IniUnicode library v1.0
 ; Copyright (c) 2025 Nikita Tseykovets <tseikovets@rambler.ru>
 ; SPDX-License-Identifier: MIT
 
