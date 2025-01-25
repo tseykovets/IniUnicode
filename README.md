@@ -67,3 +67,9 @@ Here is a complete table of correspondence between standard functions and librar
 | `IniRenameSection()`    | `_IniUnicode_RenameSection()`    |
 | `IniWrite()`            | `_IniUnicode_Write()`            |
 | `IniWriteSection()`     | `_IniUnicode_WriteSection()`     |
+
+## Compatibility and testing
+
+Information about versions and tested compatibility is available at the beginning of the source code files in comments.
+
+If you plan to use IniUnicode with a version of AutoIt whose compatibility with the library is unknown, you can use the automatic functional tests in the 'tests' folder to check compatibility.
