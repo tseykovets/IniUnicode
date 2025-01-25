@@ -81,6 +81,8 @@ Func Read()
 	If $sValue == $g_sValue1 Then Return False
 	$sValue = _IniUnicode_Read($g_sIniFilePath, $g_sSection1, $g_sKey1, $sDefault)
 	If Not ($sValue == $g_sValue1) Then Return False
+	$sValue = _IniUnicode_Read($g_sIniFilePath, $g_sSection1, $g_sSection1, $sDefault)
+	If Not ($sValue == $sDefault) Then Return False
 	Return True
 EndFunc
 
