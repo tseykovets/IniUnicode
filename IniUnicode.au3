@@ -192,8 +192,7 @@ Func _IniUnicode_RenameSection($sFile, $sSectionUnicode, $sNewSectionUnicode, $i
 	Local $sSectionAnsi = __IniUnicode_UnicodeToAnsi($sSectionUnicode)
 	Local $sNewSectionAnsi = __IniUnicode_UnicodeToAnsi($sNewSectionUnicode)
 	Local $iResult = IniRenameSection($sFile, $sSectionAnsi, $sNewSectionAnsi, $iFlag)
-	If @error Then SetError(@error)
-	Return $iResult
+	Return SetError(@error, Default, $iResult)
 EndFunc
 
 ; #FUNCTION# ====================================================================================================================
@@ -269,8 +268,7 @@ Func _IniUnicode_WriteSection($sFile, $sSectionUnicode, $vData, $iIndex = Defaul
 		$vData = __IniUnicode_UnicodeToAnsi($vData)
 	EndIf
 	Local $iResult = IniWriteSection($sFile, $sSectionAnsi, $vData, $iIndex)
-	If @error Then SetError(@error)
-	Return $iResult
+	Return SetError(@error, Default, $iResult)
 EndFunc
 
 ; #INTERNAL_USE_ONLY# ===========================================================================================================
