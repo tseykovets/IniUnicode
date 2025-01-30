@@ -7,9 +7,9 @@
 #include "common.au3"
 #include "..\IniUnicode.au3"
 
-Global $g_sIniFilePath = @ScriptDir & "\performance.ini"
-Global $g_iIterations = 1000
-Global $g_iCharacters = 10
+Global Const $g_sIniFilePath = @ScriptDir & "\performance.ini"
+Global Const $g_iIterations = 1000
+Global Const $g_iCharacters = 10
 
 Performance()
 

@@ -1,5 +1,5 @@
 ﻿; The file encoding is UTF-8 with BOM; the newline format is CR+LF
-; Script file with global variables and common functions for other scripts
+; Script file with common functions for other scripts
 ; Copyright (c) 2025 Nikita Tseykovets <tseikovets@rambler.ru>
 ; SPDX-License-Identifier: MIT
 ; Script is developed and debugged based on AutoIt v3.3.16.1
@@ -9,15 +9,6 @@
 #include <Date.au3>
 #include <FileConstants.au3>
 #include <MsgBoxConstants.au3>
-#include <StringConstants.au3>
-
-Global $g_sAutoItDir = FileGetFolder(@AutoItExe)
-Global $g_sProjectFolder = FileGetFolder(@ScriptDir)
-
-Func FileGetFolder($sFilePath)
-	Local $iPosition = StringInStr($sFilePath, "\", $STR_NOCASESENSE, -1)
-	Return StringLeft($sFilePath, $iPosition - 1)
-EndFunc
 
 Func ReportFormat(ByRef $sReport, $iTotal = 0, $iFailed = 0)
 	If $iTotal = Default Then $iTotal = 0

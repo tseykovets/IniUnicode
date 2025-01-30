@@ -7,18 +7,15 @@
 #include "common.au3"
 #include "..\IniUnicode.au3"
 
-Global $g_sIniFilePath = @ScriptDir & "\functional.ini"
-Global _
+Global Const $g_sIniFilePath = @ScriptDir & "\functional.ini"
+Global Const _
 	$g_sSection1 = "Первая секция", _
 	$g_sSection2 = "Вторая секция", _
 	$g_sKey1 = "Первый ключ", _
 	$g_sKey2 = "Второй ключ", _
 	$g_sValue1 = "Первое значение", _
 	$g_sValue2 = "Второе значение"
-Global $g_sIniSectionTemplate = "%s=%s\r\n%s=%s"
-Global $g_sIniContentTemplate = "[%s]\r\n%s\r\n[%s]\r\n%s\r\n"
-Global $g_sSection = StringFormat($g_sIniSectionTemplate, $g_sKey1, $g_sValue1, $g_sKey2, $g_sValue2)
-Global $g_sIniContent = StringFormat($g_sIniContentTemplate, $g_sSection1, $g_sSection, $g_sSection2, $g_sSection)
+Global $g_sIniReference = GetIniReference()
 
 Functional()
 
@@ -46,9 +43,17 @@ Func Functional()
 	ReportShow("Functional tests", $sReport, $iFailed)
 EndFunc
 
+Func GetIniReference()
+	Local $sIniSectionTemplate = "%s=%s\r\n%s=%s"
+	Local $sIniContentTemplate = "[%s]\r\n%s\r\n[%s]\r\n%s\r\n"
+	Local $sSection = StringFormat($sIniSectionTemplate, $g_sKey1, $g_sValue1, $g_sKey2, $g_sValue2)
+	Local $sIniContent = StringFormat($sIniContentTemplate, $g_sSection1, $sSection, $g_sSection2, $sSection)
+	Return $sIniContent
+EndFunc
+
 Func CreateIniFile()
 	Local $hFile = FileOpen($g_sIniFilePath, $FO_OVERWRITE + $FO_UTF8_NOBOM)
-	FileWrite($hFile, $g_sIniContent)
+	FileWrite($hFile, $g_sIniReference)
 	FileClose($hFile)
 EndFunc
 
@@ -75,7 +80,7 @@ EndFunc
 
 Func Read()
 	CreateIniFile()
-	Local $sDefault = "Значение по умолчанию"
+	Local Const $sDefault = "Значение по умолчанию"
 	Local $sValue
 	$sValue = IniRead($g_sIniFilePath, $g_sSection1, $g_sKey1, $sDefault)
 	If $sValue == $g_sValue1 Then Return False
@@ -109,8 +114,8 @@ EndFunc
 
 Func RenameSection()
 	CreateIniFile()
-	Local $sNewSection = "Новая секция"
-	Local $sIniReference = StringReplace($g_sIniContent, $g_sSection2, $sNewSection, 1)
+	Local Const $sNewSection = "Новая секция"
+	Local $sIniReference = StringReplace($g_sIniReference, $g_sSection2, $sNewSection, 1)
 	Local $iResult
 	$iResult = IniRenameSection($g_sIniFilePath, $g_sSection2, $sNewSection)
 	If $iResult Then Return False
