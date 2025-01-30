@@ -1,6 +1,6 @@
 # Changelog of IniUnicode
 
-## In development
+## v1.0.1 from 2025-01-30
 
 * Refactoring.
 * Fix documentation.
